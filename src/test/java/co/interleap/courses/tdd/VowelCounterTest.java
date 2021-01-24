@@ -27,4 +27,22 @@ public class VowelCounterTest {
 
         assertEquals(3, vowelCounter.count("aei"));
     }
+
+    @Test
+    public void testVowelCountWithManyVowelConsonantString() {
+        VowelCounter vowelCounter = new VowelCounter();
+
+        assertEquals(4, vowelCounter.count("i am good"));
+    }
+
+    @Test
+    public void testVowelCountWithManyVowelUpperLowerCaseConsonantString() {
+        VowelCounter vowelCounter = new VowelCounter();
+
+        assertEquals(4, vowelCounter.count("I aM goOd"));
+
+        final String list = "(?i)[^aeiou]+";
+        final String testval = "I aM goOd";
+        System.out.println(testval.replaceAll(list, ""));
+    }
 }

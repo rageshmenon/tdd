@@ -10,6 +10,7 @@ public class VowelCounter {
     public long count(String s) {
 
         return Arrays.stream(s.split(""))
+                .map(String::toLowerCase)
                 .filter(VOWEL::contains)
                 .count();
 
